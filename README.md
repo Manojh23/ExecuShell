@@ -20,42 +20,44 @@ To use Shellify, compile the project using a C compiler like `gcc`. Here is a st
 
 ```bash
 make
-```
+Run the shell:
 
-4. Run the shell:
-
-```bash
+bash
+Copy
+Edit
 ./shellify
-```
-
 You can also execute commands from a file by passing the filename as an argument:
 
-```bash
+bash
+Copy
+Edit
 ./shellify filename.txt
-```
-
-## Internal Commands
-
+Internal Commands
 Shellify supports several internal commands:
 
-- `cd`: Change the current directory.
-- `clear`: Clear the console.
-- `hist`: Access the command history. Navigate using `u` (up) and `d` (down), execute a command from history with `y`, and exit history mode with `q`.
-- `exit`: Exit the shell.
+cd: Change the current directory.
 
-## File Structure
+clear: Clear the console.
 
-- `main.c`: The entry point of the shell. It includes the main loop for command execution.
-- `parse.c`: Contains the logic for parsing command line input into tokens.
-- `pipe.c`: Handles command piping (`|`).
-- `redir.c`: Manages file redirection (`<`, `>`, `>>`).
-- `history.c`: Implements the command history feature.
-- `exe.c`: Executes the commands, whether they are internal, involve redirection, pipes, or command chaining.
-- `env.c`: Replaces environment variables with their values in commands.
-- `chain.c`: Handles command chaining (`;`, `&&`, `||`).
-- `header.h`: The header file with necessary includes and function declarations.
+hist: Access the command history. Navigate using u (up) and d (down), execute a command from history with y, and exit history mode with q.
 
-## Contributions
+exit: Exit the shell.
 
-Contributions to Shellify are welcome! Feel free to fork the project, make changes, and submit pull requests.
+File Structure
+main.c: The entry point of the shell. It includes the main loop for command execution.
 
+parse.c: Contains the logic for parsing command line input into tokens.
+
+pipe.c: Handles command piping (|).
+
+redir.c: Manages file redirection (<, >, >>).
+
+history.c: Implements the command history feature.
+
+exe.c: Executes the commands, whether they are internal, involve redirection, pipes, or command chaining.
+
+env.c: Replaces environment variables with their values in commands.
+
+chain.c: Handles command chaining (;, &&, ||).
+
+header.h: The header file with necessary includes and function declarations.
